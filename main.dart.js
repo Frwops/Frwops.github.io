@@ -60669,7 +60669,7 @@ $0(){var s=this.a
 s.d=1
 s.e=0.5
 s.f="Aplicaci\xf3n para Android{\n\nFront-End = Flutter;\nBack-End = Laravel;\nBBDD = MySql;\n\n}"
-s.r="https://link-petcare.com"},
+s.r="https://www.figma.com/design/ZPOIcc7jP344CbJSRNuLuD/PetCare?node-id=0-1&t=uv4tsqNvtnlhlRq7-1"},
 $S:0}
 A.a07.prototype={
 $0(){var s=this.a
