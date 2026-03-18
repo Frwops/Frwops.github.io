@@ -43,7 +43,6 @@ const projects = [
 
 function App() {
   const [headerAlpha, setHeaderAlpha] = useState(0)
-  const [isAutoScrolling, setIsAutoScrolling] = useState(false)
 
   useEffect(() => {
     const onScroll = () => {
@@ -65,75 +64,6 @@ function App() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  useEffect(() => {
-    const sections = () => {
-      const hero = document.querySelector('.hero')
-      const ids = ['sobre-mi', 'habilidades', 'proyectos', 'contacto']
-      const els = [hero, ...ids.map((id) => document.getElementById(id))].filter(
-        Boolean,
-      )
-      return els
-    }
-
-    const animateScrollTo = (targetY, duration = 2000) => {
-      const startY = window.scrollY
-      const distance = targetY - startY
-      const startTime = performance.now()
-
-      const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3)
-
-      const step = (now) => {
-        const elapsed = now - startTime
-        const t = Math.min(elapsed / duration, 1)
-        const eased = easeOutCubic(t)
-        window.scrollTo(0, startY + distance * eased)
-        if (t < 1) {
-          requestAnimationFrame(step)
-        }
-      }
-
-      requestAnimationFrame(step)
-    }
-
-    const onWheel = (event) => {
-      if (isAutoScrolling) {
-        event.preventDefault()
-        return
-      }
-
-      const els = sections()
-      if (!els.length) return
-
-      const direction = event.deltaY > 0 ? 1 : -1
-      const currentY = window.scrollY
-      const positions = els.map((el) => el.getBoundingClientRect().top + window.scrollY)
-
-      let currentIndex = 0
-      for (let i = 0; i < positions.length; i += 1) {
-        if (currentY + 10 >= positions[i]) {
-          currentIndex = i
-        }
-      }
-
-      let targetIndex = currentIndex + direction
-      if (targetIndex < 0 || targetIndex >= positions.length) {
-        return
-      }
-
-      event.preventDefault()
-      setIsAutoScrolling(true)
-      // Comenzar la animación de inmediato, manteniendo la transición lenta
-      animateScrollTo(positions[targetIndex])
-
-      window.setTimeout(() => {
-        setIsAutoScrolling(false)
-      }, 2100)
-    }
-
-    window.addEventListener('wheel', onWheel, { passive: false })
-    return () => window.removeEventListener('wheel', onWheel)
-  }, [isAutoScrolling])
 
   return (
     <>
