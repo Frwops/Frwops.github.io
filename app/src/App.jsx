@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import './App.css'
 
 const navLinks = [
@@ -36,9 +37,38 @@ const projects = [
 ]
 
 function App() {
+  const [headerAlpha, setHeaderAlpha] = useState(0)
+
+  useEffect(() => {
+    const onScroll = () => {
+      const sobreMi = document.getElementById('sobre-mi')
+      const limit =
+        (sobreMi?.offsetTop ?? 400) -
+        80 // algo por encima de la sección
+
+      const y = window.scrollY
+      if (y <= 0) {
+        setHeaderAlpha(0)
+        return
+      }
+
+      const progress = Math.min(Math.max(y / Math.max(limit, 1), 0), 1)
+      setHeaderAlpha(progress)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <>
-      <header className="header">
+      <header
+        className="header"
+        style={{
+          backgroundColor: `rgba(10, 10, 10, ${0.96 * headerAlpha})`,
+          opacity: headerAlpha,
+        }}
+      >
         <div className="header-inner">
           <a href="#" className="logo">Portafolio</a>
           <nav className="nav" aria-label="Principal">

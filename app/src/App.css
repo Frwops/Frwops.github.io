@@ -3,9 +3,10 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--bg);
+  background: transparent;
   border-bottom: 1px solid var(--border);
-  backdrop-filter: saturate(180%) blur(8px);
+  backdrop-filter: saturate(180%) blur(10px);
+  transition: opacity var(--transition);
 }
 
 .header-inner {
