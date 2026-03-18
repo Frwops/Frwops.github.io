@@ -1,0 +1,95 @@
+/* Paleta: negros (tono de la foto) + rojo para resaltados */
+:root {
+  --primary: #dc2626;
+  --primary-dark: #b91c1c;
+  --primary-light: rgba(220, 38, 38, 0.15);
+  --primary-muted: rgba(220, 38, 38, 0.12);
+
+  --text: #a3a3a3;
+  --text-heading: #fafafa;
+  --text-muted: #737373;
+
+  --bg: #0a0a0a;
+  --bg-alt: #141414;
+  --bg-card: #171717;
+  --border: #262626;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 2.75rem); }
+h2 { font-size: clamp(1.35rem, 3vw, 1.5rem); margin: 0 0 0.5rem; }
+h3 { font-size: 1.125rem; margin: 0 0 0.25rem; }
+
+p {
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+section {
+  padding: clamp(3rem, 8vw, 5rem) 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2rem);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.section-title span {
+  color: var(--primary);
+}

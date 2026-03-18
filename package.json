@@ -1,0 +1,22 @@
+{
+  "name": "portafolios",
+  "version": "1.0.0",
+  "description": "Portafolio personal - React",
+  "private": true,
+  "scripts": {
+    "dev": "npm run dev --prefix app",
+    "build": "npm run build --prefix app",
+    "preview": "npm run preview --prefix app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frwops/Frwops.github.io.git"
+  },
+  "keywords": ["portafolio", "react", "vite"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frwops/Frwops.github.io/issues"
+  },
+  "homepage": "https://github.com/Frwops/Frwops.github.io#readme"
+}
