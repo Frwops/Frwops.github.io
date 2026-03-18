@@ -91,7 +91,7 @@ function App() {
             <h1 className="hero-title">Hola <span>Mundo</span></h1>
           </div>
           <p className="hero-desc">
-            Desarrollador. Aquí encontrarás mis proyectos y tecnologías.
+            Ingeniero en Informática y desarrollador web full stack, especializado en crear experiencias digitales claras y efectivas.
           </p>
           <a href="#habilidades" className="hero-scroll" aria-label="Bajar">
             <img src="/images/icono_de_flecha_abajo.png" alt="" />
@@ -102,11 +102,13 @@ function App() {
           <h2 className="section-title">Sobre <span>mí</span></h2>
           <div className="about-content">
             <p>
-              Texto breve sobre tu trayectoria y qué te apasiona. Puedes hablar de tu formación,
-              experiencia o enfoque de trabajo.
+              Soy Francisco Ignacio Soto Reyes, ingeniero en Informática de 29 años y un apasionado de la tecnología. Me motiva transformar ideas en productos reales que aporten valor tanto a personas como a organizaciones.
             </p>
             <p>
-              Segunda idea: valores, metodología o tipo de proyectos que te gustan.
+              A lo largo de mi carrera me he desempeñado como desarrollador web full stack y consultor Azure, combinando la parte técnica con experiencia en gerencia. Tuve la oportunidad de liderar como project manager el desarrollo de un software educativo, conectando equipos, objetivos y plazos.
+            </p>
+            <p>
+              Fuera del escritorio me encontrarás corriendo, haciendo mountain bike o trekking: deportes que me han enseñado disciplina, constancia y cómo avanzar paso a paso hacia metas exigentes.
             </p>
           </div>
         </section>
